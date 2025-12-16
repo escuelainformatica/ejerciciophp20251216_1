@@ -157,3 +157,27 @@ Vamos a modificar la function del controlador para que lea los valores recibidos
         return view("calculadora.resultado",["total"=>$total]);
     }
 ```
+
+## Enviar datos por POST
+
+* En el formulario:  Agregar el metodo POST y un tag @csrf (seguridad)
+
+```html
+<form action="/cliente/resultadoPost" method="POST">
+    ....
+    @csrf
+
+</form>
+```
+
+* En el controlador: Se pueden leer los valores de la siguiente manera:
+
+```php
+$rut=$request->post("rut","");
+```
+
+* En el enrutamiento: Se debe indicar que la pagina va a recibir valores por POST
+
+```php
+Route::post('/cliente/resultadoPost',[ClienteController::class,'resultadoPost']);
+```

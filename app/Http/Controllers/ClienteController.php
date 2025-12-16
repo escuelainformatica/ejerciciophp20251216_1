@@ -17,4 +17,15 @@ class ClienteController extends Controller
         return view("cliente.resultado",[
             'rut'=>$rut,'nombre'=>$nombre,'apellido'=> $apellido,'edad'=>$edad]);
     }
+    public function formularioPost() {
+        return view("cliente.formularioPost");
+    }
+    public function resultadoPost(Request $request) {
+        $rut=$request->post("rut","");
+        $nombre=$request->post("nombre","");
+        $apellido=$request->post("apellido","");
+        $edad=$request->post("edad",0);
+        return view("cliente.resultado",[
+            'rut'=>$rut,'nombre'=>$nombre,'apellido'=> $apellido,'edad'=>$edad]);
+    }
 }

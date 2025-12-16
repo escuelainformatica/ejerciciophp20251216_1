@@ -13,3 +13,6 @@ Route::get('/resultado',[CalculadoraController::class,'resultado']);
 
 Route::get('/cliente/formulario',[ClienteController::class,'formulario']);
 Route::get('/cliente/resultado',[ClienteController::class,'resultado']);
+
+Route::get('/cliente/formularioPost',[ClienteController::class,'formularioPost']);
+Route::post('/cliente/resultadoPost',[ClienteController::class,'resultadoPost']);

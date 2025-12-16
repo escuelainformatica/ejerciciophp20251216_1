@@ -13,4 +13,5 @@ class CalculadoraController extends Controller
         $total=$request->query("numero1",0)+$request->query("numero2",0);
         return view("calculadora.resultado",["total"=>$total]);
     }
+    
 }
